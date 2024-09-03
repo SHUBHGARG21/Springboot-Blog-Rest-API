@@ -1,13 +1,17 @@
 package com.springboot.blog.payload;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+
+import java.util.Arrays;
 import java.util.Set;
 
 @Data
+@AllArgsConstructor
 @Schema(
         description = "PostDTO Model Information"
 )
