@@ -60,12 +60,12 @@ public class AuthServiceImpl implements AuthService {
 
         // add check for username exists in database
         if(userRepository.existsByEmail(registerDto.getEmail())){
-            throw new BlogAPIException(HttpStatus.BAD_REQUEST,"Username is already exist!");
+            throw new BlogAPIException(HttpStatus.BAD_REQUEST,"Email is already exist!");
         }
 
         // add check for email exists in database
         if(userRepository.existsByUsername(registerDto.getUsername())){
-            throw new BlogAPIException(HttpStatus.BAD_REQUEST,"Email is already exist!");
+            throw new BlogAPIException(HttpStatus.BAD_REQUEST,"Username is already exist!");
         }
 
         User user = new User();

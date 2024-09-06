@@ -10,9 +10,11 @@ import com.springboot.blog.repository.PostRepository;
 import com.springboot.blog.service.impl.PostServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -27,6 +29,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+//@ExtendWith(MockitoExtension.class)
 public class PostServiceImpTest {
 
     @Mock
@@ -54,7 +57,7 @@ public class PostServiceImpTest {
     }
 
     @Test
-    void testCategoryPost(){
+    void testCreatePost(){
         when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
         when(mapper.map(postDto,Post.class)).thenReturn(post);
         when(postRepository.save(post)).thenReturn(post);
