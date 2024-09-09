@@ -10,11 +10,9 @@ import com.springboot.blog.repository.PostRepository;
 import com.springboot.blog.service.impl.PostServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -53,7 +51,7 @@ public class PostServiceImpTest {
         MockitoAnnotations.openMocks(this);
         category = new Category(1L, "JAVA", "JavaCategory", null);
         post = new Post(1L, "Post Title", "Post Desc", "Post content", null, category);
-        postDto = new PostDto(1L, "Post Title", "Post Desc", "Post Content", null, 1L);
+        postDto = new PostDto(1L, "Post Title", "Post Desc", "Post Content", null, 1L); // To remove the error we will add the @AllArgConstructor in its Dto class
     }
 
     @Test

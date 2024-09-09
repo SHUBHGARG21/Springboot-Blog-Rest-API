@@ -25,7 +25,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class CommentServiceImpTest {
+public class
+CommentServiceImpTest {
     @Mock
     private PostRepository postRepository;
 
@@ -46,7 +47,7 @@ public class CommentServiceImpTest {
     void setUp(){
         post = new Post(1L,"Post 1","Post Desc","Post content",null,null);
         comment =new Comment(1l,"Comment 1","shubh@gmail.com","Comment Body",post);
-        commentDto=new CommentDto(1L,"Comment 1","shubh@gmail.com","Comment Body");
+        commentDto=new CommentDto(1L,"Comment 1","shubh@gmail.com","Comment Body"); // To remove the error we will add the @AllArgConstructor in its Dto class
     }
 
     @Test

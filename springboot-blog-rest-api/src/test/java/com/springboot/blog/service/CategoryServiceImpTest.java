@@ -38,7 +38,7 @@ public class CategoryServiceImpTest {
     @BeforeEach
     public void setUp(){
         category = new Category(1L,"Category","Category Desc",null);
-        categoryDto = new CategoryDto(1L,"Category","Category Desc");
+        categoryDto = new CategoryDto(1L,"Category","Category Desc"); // To remove the error we will add the @AllArgConstructor in its Dto class
     }
 
     @Test
@@ -76,7 +76,8 @@ public class CategoryServiceImpTest {
         when(categoryRepository.findAll()).thenReturn(Arrays.asList(category1,category));
         when(mapper.map(any(Category.class),eq(CategoryDto.class)))
                 .thenReturn(categoryDto)
-                .thenReturn(new CategoryDto(2L,"Category 2","Category Desc 2"));
+                .thenReturn(new CategoryDto(2L,"Category 2","Category Desc 2")); // To remove the error we will add the @AllArgConstructor in its Dto class
+
 
         List<CategoryDto> categories=categoryServiceImp.getAllCategory();
 

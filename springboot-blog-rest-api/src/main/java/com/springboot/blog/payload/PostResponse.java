@@ -13,7 +13,8 @@ import java.util.List;
 @Schema(
         description = "PostResponse Model Information"
 )
-public class PostResponse {
+public class
+PostResponse {
     @Schema(
             description = "Blog PostResponse Content "
     )
