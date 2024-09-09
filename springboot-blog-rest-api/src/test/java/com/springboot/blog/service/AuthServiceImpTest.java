@@ -54,7 +54,7 @@ public class AuthServiceImpTest {
 
     @Test
     public void testLoginSuccess(){
-        LoginDto loginDto= new LoginDto("user","password");
+        LoginDto loginDto= new LoginDto("user","password"); // To remove the error we will add the @AllArgConstructor in its Dto class
         Authentication authentication=mock(Authentication.class);
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class))).thenReturn(authentication);
         when(jwtTokenProvider.generateToken(authentication)).thenReturn("token");
